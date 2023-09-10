@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Exo+2:wght@600&family=Luckiest+Guy&family=Phudu&family=Rubik:wght@600&family=Timmana&family=Titan+One&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <title>TO WSZYSTKO TO TYLKO PRELIDIUM</title>
+    <link rel="icon" type="image/png" href="fukajodlot.png">
+    <script>
+        var targetDate = new Date("2023-11-24T17:59:59").getTime();
+        var x = setInterval(function() {
+            var currentDate = new Date().getTime();
+            var timeRemaining = targetDate - currentDate;
+            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "D " + hours + "H "+ minutes + "M " + seconds + "S ";
+            if(minutes<10){minutes = "0"+minutes}
+            if(seconds<10){seconds = "0"+seconds}
+            if (timeRemaining < 0) {
+            clearInterval(x);
+                document.getElementById("countdown").innerHTML = "TO WSZYSTKO TO TYLKO PRELUDIUM";
+            }
+        }, 1000);
+    </script>
+    <style>
+        body{
+            background-image:url(fukajodlot.png);
+        }
+        p{
+            text-shadow: 3px 0px 25px red;;
+            color:rgb(255, 0, 0);
+            margin-top:525px;
+            font-weight: 900;
+            font-size:75px;
+            text-align: center;
+            justify-content: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-family: 'Exo 2', sans-serif;
+            font-family: 'Luckiest Guy', cursive;
+            font-family: 'Phudu', cursive;
+            font-family: 'Rubik', sans-serif;
+            font-family: 'Timmana', sans-serif;
+            font-family: 'Titan One', cursive;
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p>To wszystko to tylko ... TOUR: <span id="countdown"></span></p>
+</body>
+</html>
